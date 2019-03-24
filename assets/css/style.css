@@ -1,8 +1,25 @@
 body {
-    color: black;
-    background-color: purple;
+    color: lightgrey;
+    background-color: #0021A5;
+    background: url(https://bollytrip.com/wp-content/uploads/2018/12/free-gator-wallpaper-lovely-uf-wallpaper-for-windows-wallpapersafari-of-free-gator-wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    background-color: #0021a5;
+    color: white;
+}
+
+h1 {
+    color: #fa4616;
 }
 
 #gameflow {
     box-align: center;
+}
+
+#start-button {
+    color: white;
+    background-color: #fa4616;
 }

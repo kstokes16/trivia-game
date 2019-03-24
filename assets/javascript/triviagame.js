@@ -8,44 +8,44 @@ var questionNumber = 0;
 // questions to be used during the game
 
 var gameQuestions = [{
-    question: "First question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
+    question: "What year was the first official season for UF football",
+    answers: ["A. 1966", "B. 1899", "C. 1900", "D. 1998"],
+    correctAnswer: "B. 1899"
+},
+{
+    question: "In 1996, the Gators won their first National Championship in football. Who did they beat?",
+    answers: ["A. Miami", "B. UCF", "C. USF", "D. FSU"],
+    correctAnswer: "D. FSU"
+},
+{
+    question: "Florida vs Florida State is certainly one of the most heated rivalries in all of sports, but when did it begin?",
+    answers: ["A. 1850", "B. 1933", "C. 1902", "D. 1950"],
+    correctAnswer: "C. 1902"
+},
+{
+    question: "What is the mascot for the University of Florida?",
+    answers: ["A. Seminole", "B. Gator", "C. Knight", "D. Bulldog"],
+    correctAnswer: "B. Gator"
+},
+{
+    question: "When did the Gator basketball team win its first national title?",
+    answers: ["A. 2006 ", " B. 2008 ", " C. 1994 ", " D. 1996 "],
+    correctAnswer: "A. 2006"
+},
+{
+    question: "What year was the University of Florida founded?",
+    answers: ["A. 1912", "B. 1776", "C. 1982", "D. 1853"],
+    correctAnswer: "D. 1853"
+},
+{
+    question: "What are UF's official school colors?",
+    answers: ["A. Green and Orange", "B. Orange and Blue", "C. Black and Gold", "D. Green and Gold"],
     correctAnswer: "A. florida"
 },
 {
-    question: "Second question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Third question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Fourth question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Fifth question goes here...",
-    answers: ["A. florida ", " B. gator ", " C. Albert ", " D. Alberta "],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Sixth question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Seventh question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
-},
-{
-    question: "Eigth question goes here...",
-    answers: ["A. florida", "B. gator", "C. Albert", "D. Alberta"],
-    correctAnswer: "A. florida"
+    question: "What popular sports drink was created at UF?",
+    answers: ["A. Powerade", "B. Red Bull", "C. Gatorade", "D. Body Armor"],
+    correctAnswer: "C. Gatorade"
 }];
 
 // click this button at the beginning to begin the game and make the questions appear
