@@ -1,13 +1,14 @@
 body {
-    color: lightgrey;
-    background-color: #0021A5;
-    background: url(https://bollytrip.com/wp-content/uploads/2018/12/free-gator-wallpaper-lovely-uf-wallpaper-for-windows-wallpapersafari-of-free-gator-wallpaper.jpg);
+    color: #0021a5;
+    background-color: silver;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .jumbotron {
-    background-color: #0021a5;
+    background: url(http://305gators.com/wp/wp-content/uploads/2015/01/gatorskin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
 }
 
