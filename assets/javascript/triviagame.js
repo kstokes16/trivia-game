@@ -3,14 +3,23 @@
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unansweredAnswers = 0;
-var counter = 90;
+var counter = 120;
 var questionNumber = 0;
 var theClock;
+var rightAnswers = ["B. 1899", "D. FSU", "C. 1902", "B. Gator", "A. 2006", "D. 1853", "B. Orange and Blue", "C. Gatorade"];
+
+$("#details").hide();
+
+$("#done").on("click", function() {
+    console.log("You clicked the done button me");
+    clearInterval(theClock);
+    result();
+})
 
 // questions to be used during the game
 
 var gameQuestions = [{
-    question: "What year was the first official season for UF football",
+    question: "What year was the first official season for UF football?",
     answers: ["A. 1966", "B. 1899", "C. 1900", "D. 1998"],
     correctAnswer: "B. 1899"
 },
@@ -31,7 +40,7 @@ var gameQuestions = [{
 },
 {
     question: "When did the Gator basketball team win its first national title?",
-    answers: ["A. 2006 ", " B. 2008 ", " C. 1994 ", " D. 1996 "],
+    answers: ["A. 2006 ", "B. 2008", "C. 1994", "D. 1996"],
     correctAnswer: "A. 2006"
 },
 {
@@ -50,11 +59,14 @@ var gameQuestions = [{
     correctAnswer: "C. Gatorade"
 }];
 
+// array of correct answers
+
 // submit button at bottom of screen 
 
 function doneButton() {
-    $("#content-area").html("<p><button type='button' class='btn btn-lg' id='start-button'>Submit! </button></p>");
+    $("#content-area").html("<p><button type='button' class='btn btn-lg' id='done'>Submit! </button></p>");
 }
+
 
 // makes timer appear at top of page
 
@@ -63,12 +75,13 @@ function timerWrapper() {
     function ninetySeconds() {
         if (counter === 0) {
             clearInterval(theClock);
-            resetGame();
+            //resetGame();
+            result();
         }
         if (counter > 0) {
             counter--;
         }
-        $("#game-timer").html("<h4>Time Remaining:</h4>" + counter + "<h6>Seconds</h6>");
+        $("#game-timer").text(counter);
     }
 } //end of timer function
 
@@ -78,39 +91,54 @@ $("#start-button").on("click",function(){
     timerWrapper();
     doneButton();
     $("#start-button").hide();
+    $("#details").show();
 
     for (var i =0; i < gameQuestions.length; i++) {
         $("#gameflow").append('<h4>' + gameQuestions[i].question+'</h4>');
     for (var ctr=0; ctr < gameQuestions[i].answers.length; ctr++) {
         $("#gameflow").append('<h5>'+
-        "<input type='radio' name=' question-" + i + "'value='" + gameQuestions[i].answers[ctr]+"'>" + gameQuestions[i].answers[ctr])
-        }
+        "<input type='radio' name='question-" + i + "'value='" + gameQuestions[i].answers[ctr]+"'>" + gameQuestions[i].answers[ctr])
+        }  
     }
     console.log("You clicked the button");
-}); // end of start game button
-    
+});
+
+function result(){
+    var userAns = [];
+    for(var i=0;i<gameQuestions.length;i++){
+        var temp = $("input[name='question-"+i+"']:checked").val();
+        userAns.push(temp);
+    }
+    for(var j=0;j<userAns.length;j++){
+        if(userAns[j]==rightAnswers[j]){
+            correctAnswers++;
+        }
+        else if(userAns[j]==undefined){
+            unansweredAnswers++;
+        }
+        else{
+            incorrectAnswers++;
+        }
+    }
+    $("#ca").text(correctAnswers);
+    $("#ic").text(incorrectAnswers);
+    $("#ua").text(unansweredAnswers);
+    console.log(userAns);
+
+}
+// end of start game button
 
 /* create timer to display after start button is clicked and add it to HTML
 
-function timerWrapper() {
-    theClock = setInterval(ninetySeconds, 1000);
-    function ninetySeconds() {
-        if (counter === 0) {
-            clearInterval(theClock);
-            timeoutLoss();
-        }
-        if (counter > 0) {
-            counter--;
-        }
-        $("#game-timer").html("<h3>Time Remaining:</h3>" + counter);
-    }
-} */
+DONE
 
 // create done button that appears when game is started and add it to HTML
 
+Added button, but no functionality yet
+
 // tally up correct questions, incorrect questions, unanswered questions and display at completion of game after submit button is hit
 
-// create function to run if time runs out
+// create function to run if time runs out and figure out where to implement it to make game work
 
 function resetGame() {
     correctAnswers = 0;
@@ -119,4 +147,4 @@ function resetGame() {
     counter = 90;
     theClock;
     timerWrapper();
-}
+} */

@@ -3,6 +3,7 @@ body {
     background-color: silver;
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif, 'Source Sans Pro', sans-serif, 'Noto Sans', sans-serif;
 }
 
 .jumbotron {
@@ -10,10 +11,14 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    font-family: 'Lato', sans-serif, 'Source Sans Pro', sans-serif, 'Noto Sans', sans-serif;
+
 }
 
 h1 {
     color: #fa4616;
+    font-family: 'Lato', sans-serif, 'Source Sans Pro', sans-serif, 'Noto Sans', sans-serif;
+
 }
 
 #gameflow {
@@ -21,6 +26,11 @@ h1 {
 }
 
 #start-button {
+    color: white;
+    background-color: #fa4616;
+}
+
+#done {
     color: white;
     background-color: #fa4616;
 }
