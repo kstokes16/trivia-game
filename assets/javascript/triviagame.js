@@ -3,60 +3,54 @@
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unansweredAnswers = 0;
-var counter = 120;
+var counter = 20;
 var questionNumber = 0;
 var theClock;
-var rightAnswers = ["B. 1899", "D. FSU", "C. 1902", "B. Gator", "A. 2006", "D. 1853", "B. Orange and Blue", "C. Gatorade"];
+var rightAnswers = ["1899", "FSU", "1902", "Gator", "2006", "1853", "Orange and Blue", "Gatorade"];
 
 $("#details").hide();
-
-$("#done").on("click", function() {
-    console.log("You clicked the done button me");
-    clearInterval(theClock);
-    result();
-})
 
 // questions to be used during the game
 
 var gameQuestions = [{
     question: "What year was the first official season for UF football?",
-    answers: ["A. 1966", "B. 1899", "C. 1900", "D. 1998"],
-    correctAnswer: "B. 1899"
+    answers: ["1966", "1899", "1900", "1998"],
+    correctAnswer: "1899"
 },
 {
     question: "In 1996, the Gators won their first National Championship in football. Who did they beat?",
-    answers: ["A. Miami", "B. UCF", "C. USF", "D. FSU"],
-    correctAnswer: "D. FSU"
+    answers: ["Miami", "UCF", "USF", "FSU"],
+    correctAnswer: "FSU"
 },
 {
     question: "Florida vs Florida State is certainly one of the most heated rivalries in all of sports, but when did it begin?",
-    answers: ["A. 1850", "B. 1933", "C. 1902", "D. 1950"],
-    correctAnswer: "C. 1902"
+    answers: ["1850", "1933", "1902", "1950"],
+    correctAnswer: "1902"
 },
 {
     question: "What is the mascot for the University of Florida?",
-    answers: ["A. Seminole", "B. Gator", "C. Knight", "D. Bulldog"],
-    correctAnswer: "B. Gator"
+    answers: ["Seminole", "Gator", "Knight", "Bulldog"],
+    correctAnswer: "Gator"
 },
 {
     question: "When did the Gator basketball team win its first national title?",
-    answers: ["A. 2006 ", "B. 2008", "C. 1994", "D. 1996"],
-    correctAnswer: "A. 2006"
+    answers: ["2006", "2008", "1994", "1996"],
+    correctAnswer: "2006"
 },
 {
     question: "What year was the University of Florida founded?",
-    answers: ["A. 1912", "B. 1776", "C. 1982", "D. 1853"],
-    correctAnswer: "D. 1853"
+    answers: ["1912", "1776", "1982", "1853"],
+    correctAnswer: "1853"
 },
 {
     question: "What are UF's official school colors?",
-    answers: ["A. Green and Orange", "B. Orange and Blue", "C. Black and Gold", "D. Green and Gold"],
-    correctAnswer: "B. Orange and Blue"
+    answers: ["Green and Orange", "Orange and Blue", "Black and Gold", "Green and Gold"],
+    correctAnswer: "Orange and Blue"
 },
 {
     question: "What popular sports drink was created at UF?",
-    answers: ["A. Powerade", "B. Red Bull", "C. Gatorade", "D. Body Armor"],
-    correctAnswer: "C. Gatorade"
+    answers: ["Powerade", "Red Bull", "Gatorade", "Body Armor"],
+    correctAnswer: "Gatorade"
 }];
 
 // array of correct answers
@@ -65,6 +59,7 @@ var gameQuestions = [{
 
 function doneButton() {
     $("#content-area").html("<p><button type='button' class='btn btn-lg' id='done'>Submit! </button></p>");
+    
 }
 
 
@@ -86,6 +81,12 @@ function timerWrapper() {
 } //end of timer function
 
 // click this button at the beginning to begin the game and make the questions appear
+
+function submit () {
+    console.log("You clicked the done button");
+    clearInterval(theClock);
+    result();
+}
 
 $("#start-button").on("click",function(){
     timerWrapper();
@@ -126,6 +127,9 @@ function result(){
     console.log(userAns);
 
 }
+
+$(document).on("click", "#done", submit);
+
 // end of start game button
 
 /* create timer to display after start button is clicked and add it to HTML
