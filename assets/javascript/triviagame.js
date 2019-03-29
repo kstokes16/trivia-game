@@ -3,7 +3,7 @@
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unansweredAnswers = 0;
-var counter = 20;
+var counter = 120;
 var questionNumber = 0;
 var theClock;
 var rightAnswers = ["1899", "FSU", "1902", "Gator", "2006", "1853", "Orange and Blue", "Gatorade"];
@@ -59,7 +59,10 @@ var gameQuestions = [{
 
 function doneButton() {
     $("#content-area").html("<p><button type='button' class='btn btn-lg' id='done'>Submit! </button></p>");
-    
+}
+
+function playAgainButton() {
+    $("#submit-area").html("<p><button type='button' class='btn btn-lg' id='playagain'>Play again? </button></p>");
 }
 
 
@@ -82,10 +85,18 @@ function timerWrapper() {
 
 // click this button at the beginning to begin the game and make the questions appear
 
+function clearResults() {
+    correctAnswers.empty;
+    incorrectAnswers.empty;
+    unansweredAnswers.empty;
+}
+
 function submit () {
+    alert("Scroll up to see how you did.");
     console.log("You clicked the done button");
     clearInterval(theClock);
     result();
+    playAgainButton();
 }
 
 $("#start-button").on("click",function(){
@@ -121,14 +132,15 @@ function result(){
             incorrectAnswers++;
         }
     }
-    $("#ca").text(correctAnswers);
-    $("#ic").text(incorrectAnswers);
-    $("#ua").text(unansweredAnswers);
+    $("#ca").html(correctAnswers);
+    $("#ic").html(incorrectAnswers);
+    $("#ua").html(unansweredAnswers);
     console.log(userAns);
 
 }
 
 $(document).on("click", "#done", submit);
+$(document).on("click", "#playagain", resetGame);
 
 // end of start game button
 
@@ -142,13 +154,14 @@ Added button, but no functionality yet
 
 // tally up correct questions, incorrect questions, unanswered questions and display at completion of game after submit button is hit
 
-// create function to run if time runs out and figure out where to implement it to make game work
+// create function to run if time runs out and figure out where to implement it to make game work*/
 
 function resetGame() {
     correctAnswers = 0;
     incorrectAnswers = 0;
     unansweredAnswers = 0;
-    counter = 90;
+    counter = 120;
+    clearInterval(theClock);
     theClock;
     timerWrapper();
-} */
+} 
